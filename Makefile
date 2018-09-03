@@ -1,0 +1,27 @@
+#OBJS SOURCE FILES
+OBJS_COMMON = btcTools.cxx btcStructs.cxx
+OBJ_INIT = Initialize_Wallet.cxx
+OBJ_OP = Operate_Wallet.cxx
+
+#C COMPILER
+CC = g++
+
+#COMPILER_FLAGS COMPILATION OPTIONS
+COMPILER_FLAGS = -Wall -std=c++11
+
+#LINKERS LIBRARIES
+LINKER_FLAGS = -lcrypto -lssl
+
+#EXE_NAME EXECUTABLE FILE
+EXE_NAME_1 = initSafeBook
+EXE_NAME_2 = runSafeBook
+
+#MAKE COMMANDS
+all : InitFile RunFile
+
+InitFile: $(OBJS_COMMON) $(OBJ_INIT)
+	$(CC) $(OBJS_COMMON) $(OBJ_INIT) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(EXE_NAME_1)
+
+RunFile: $(OBJS_COMMON) $(OBJ_OP)
+	$(CC) $(OBJS_COMMON) $(OBJ_OP) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(EXE_NAME_2)
+

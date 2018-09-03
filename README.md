@@ -45,13 +45,12 @@ SafeBook only runs in a terminal, and the lack of GUI means it is less user frie
 1. Download the repository as a .zip file or using git clone.
 2. Extract the .zip file.
 3. Open a terminal and move to the program directory.
-4. Run the following commands to build the executables from source code:
-	* `g++ -Wall -o initSafeBook Initialize_Wallet.cxx btcTools.cxx btcStructs.cxx -lcrypto -lssl`
-	* `g++ -Wall -o runSafeBook Operate_Wallet.cxx btcTools.cxx btcStructs.cxx -lcrypto -lssl`
+4. Run the following command to build the executables from source code:  
+	`make all`
 
-5. Use the following commands to launch the program:
-	* `./initSafeBook` - initialize the wallet
-	* `./runSafeBook` - start the application
+5. Use the following commands to launch the program:  
+	`./initSafeBook` - initialize the wallet  
+	`./runSafeBook` - start the application
 
 ### Compatibility
 *SafeBook is NOT compatible with any other software or hardware wallets. Do not try to import or export wallet files between different wallets unless you know EXACTLY what you are doing and are willing to bare the responsibility if things go wrong.*
